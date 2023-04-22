@@ -57,5 +57,5 @@ document.write(a)*/
 document.write(a)*/
 
 //REDUCE() da como resultado un único valor 
-
+let a = numeros.reduce(function (total, n) {return total + n })
 document.write(a)
