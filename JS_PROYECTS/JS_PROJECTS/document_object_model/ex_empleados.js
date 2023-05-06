@@ -27,4 +27,5 @@ function mostrarempleado(){
     for(e of empleados){
         document.getElementById("parrafo").innerHTML += e.nombre + " " +  e.apellido  + " " +  e.cargo + "<br>";
     }
+    empleados = [];
 }
