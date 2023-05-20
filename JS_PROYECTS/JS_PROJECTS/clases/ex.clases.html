@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //CLASES
+        // 1-. Crear una clase "Mesa", con sus propiedades: alto, ancho, largo.
+        class Mesa{
+            constructor(alto, ancho, largo){
+                this._alto = alto;
+                this._ancho = ancho;
+                this._largo = largo;
+            }
+        }
+        // 2 -. Crear una clase "TV", propiedades: marca, pulgadas. Utilizar la expresión clase anónima.
+        let TV = class{
+            constructor(marca, pulgadas){
+                this._marca = marca;
+                this._pulgadas = pulgadas;
+            }
+        }
+
+        //3-. SUBCLASES
+        class Persona{
+            constructor(nombre, apellido){
+                this._nombre = nombre;
+                this._apellido = apellido;
+            }
+        }
+        //subclase, herencia
+        class Empleado extends Persona{
+            constructor(nombre, apellido, codigo){
+                super (nombre, edad);
+                this._codigo = codigo;
+            }
+        }
+
+        // 4-. 
+        class Medico{
+            constructor(nombre, apellido, codmedico){
+                this._nombre = nombre;
+                this._apellido = apellido;
+                this._codmedico = codmedico;
+            }
+        }
+
+        class Cirujano extends Medico{
+            constructor(nombre, apellido, codmedico, cantOperaciones){
+                super (nombre, apellido, codmedico);
+                this._cantOperaciones = cantOperaciones;
+            }
+        }
+
+
+    //Práctica: Getters y Setters
+    // 5-.
+    class Ciudad{
+        constructor(nombre, pais, cantHanitantes){
+            this._nombre = nombre;
+            this._pais = pais;
+            this._cantHabitantes = cantHabitantes;
+        }
+    }
+
+    //6-.
+    class Colegio{
+        constructor(nombre, direccion, cantAlumnos){
+            this._nombre = nombre;
+            this._direccion = direccion;
+            this._cantAlumnos = cantAlumnos;
+        }
+    }
+    </script>
+</body>
+</html>

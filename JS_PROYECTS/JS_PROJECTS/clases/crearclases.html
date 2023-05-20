@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Clase
+        class Estudiante{
+            //Constructor
+            constructor (nombre, edad){
+                this._nombre = nombre;
+                this._edad = edad;
+            }
+            //método
+            codigoId(){
+                return  Math.floor((Math.random()*10 + 1));
+            }
+            // Método para asignar un valor
+            get nombre(){
+                return this._nombre;
+            }
+            set nombre(nuevoValor){
+                this._nombre = nuevoValor;
+            }
+        }
+        let e1 = new Estudiante("Ane", 21);
+        let e2 = new Estudiante("Luis", 31);
+
+        //subclase de la clase principal (herencia)
+        class EstudianteParcial extends Estudiante{
+            constructor(nombre, edad, curso){
+                super (nombre, edad)
+                this._curso = curso 
+            }
+            get curso(){
+                 return this._curso = curso;
+            }
+            
+            set curso(nuevo){
+                this._curso = nuevo;
+            }
+        }            
+        // Respuestas o variables
+        let e3 = new EstudianteParcial("Maritza", 30, "Informática");
+        console.table(e3);
+
+    //Otra forma de definir las clases seria usando 
+    //que pueden ser nombradas o anónimas
+    console.log(Rectangulo.name);
+    let Rectangulo = class {
+        constructor(alto, ancho){
+            this._alto = alto;
+            this._ancho = ancho;
+        }
+    }
+    console.log(Rectangulo1.name);
+    let Rectangulo1 = class {
+        constructor(alto, ancho){
+            this._alto = alto;
+            this._ancho = ancho;
+        }
+    }
+    </script>
+</body>
+</html>
