@@ -1,0 +1,40 @@
+{
+  "usuarios": [
+    {
+      "nombre": "Ane",
+      "edad": "32",
+      "localidad": "Donostia",
+      "id": 1
+    },
+    {
+      "nombre": "Luis",
+      "edad": "34",
+      "localidad": "Usurbil",
+      "id": 2
+    },
+    {
+      "nombre": "Sara",
+      "localidad": "san sebastian",
+      "edad": "30",
+      "id": 3
+    },
+    {
+      "nombre": "fjgh",
+      "localidad": "gbhth",
+      "edad": "hth",
+      "id": 5
+    },
+    {
+      "nombre": "ergh",
+      "localidad": "gbhthhjyyj",
+      "edad": "hyjth",
+      "id": 6
+    },
+    {
+      "nombre": "ergh b",
+      "localidad": "gbhthhjyyjbfb",
+      "edad": "hyjthfbngf",
+      "id": 7
+    }
+  ]
+}
