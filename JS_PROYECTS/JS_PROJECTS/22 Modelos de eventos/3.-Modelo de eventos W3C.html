@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Eventos. Modelo de eventos W3C</title>
+</head>
+<body>
+    <h1>Modelo de eventos W3C</h1>
+    <h3 id="parrafo 1">Modelo del W3C</h3>
+    <h3 id="parrafo 2">Modelo del WC3 con funciones anónimas</h3>
+    <h3 id="parrafo 3">Modelo del WC3 con funciones flecha</h3>
+    <script>
+        //Tenemos que identificar el elemento  
+        //El último parámetro es el burbugeo, vamos a poner siempre falso 
+         /* elemento.addEventListener("<evento_sin_on>",<funcion>,<false|true>); */
+        document.getElementById("parrafo 1").addEventListener("click", SaludarUnaVez, false);
+        //Podemos añadir más de un evento, añado otro click
+        document.getElementById("parrafo 1").addEventListener("click", PonerRojo, false);
+
+        function SaludarUnaVez(){
+            alert("Hola");
+            document.getElementById("parrafo 1").removeEventListener("click", SaludarUnaVez);
+            //Si quiero eliminar el click para que solo me lo haga una vez, hacemos:
+           
+        }
+        function PonerRojo(){
+            document.getElementById("parrafo 1").style.color="red";
+        }
+        /* Funciones anónimas  o funciones flecha
+         /* elemento.addEventListener("<evento_sin_on>",function(){<codigo_funcion}),false); */
+        // Por ejemplo cambiamos el color de fondo de la etiqueta w3canonima a gris -->C0C0C0
+         document.getElementById("parrafo 2").addEventListener("click", function(){
+              this.style.background="#C0C0C0";
+            });
+
+        //funciones fecha
+            document.getElementById("parrafo 3").addEventListener('click', e => alert ("clic en parafo 3"))
+            //this.style.background="#C0C0C0");--> Error this no se puede usar con funciones flecha
+            //Este manera de manejar eventos funciona para Chrome, Mozilla pero no funciona para Microsoft
+            //Edge o Ie versiones antiguas. 
+    </script>
+
+</body>
+	
+	
+</html>

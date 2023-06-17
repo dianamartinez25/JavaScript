@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos. Obtener información de un evento</title>
+
+</head>
+
+<body>
+    <h1 id="eventos">Obtener información de un evento</h1>
+    <h2 id="parrafo1">Párrafo 1</h2>
+    <h2 id="parrafo2">Párrafo 2</h2>
+    <script>
+        document.getElementById("eventos").addEventListener("mouseover", manejador);
+        document.getElementById("eventos").addEventListener("mouseout", manejador);
+        document.getElementById("parrafo1").addEventListener("click", saludo);
+        document.getElementById("parrafo2").addEventListener("click", saludo);
+
+        //Las funciones no se les pasa parámetros pero aqui el navegador crea automáticamente 
+        //un parámetro (e) que es de tipo evento
+        //si usamos navegadores como Chrome, Firefox, Safari se crea la e
+        //los navegadores de microsoft no se crea
+        function manejador(e) {
+            //Valoramos la posibilidad de que se utilice un navegador de Microsoft
+
+            if (!e) e = window.event; //si la e no existe la creamos con window, event para los navegadores de Microsoft
+
+            switch (e.type) {
+            case "mouseover":
+                this.style.color = "purple";
+                break;
+            case "mouseout":
+                this.style.color = "yellow";
+                break;
+            }
+        }
+
+        function saludo(e) {
+            //Valoramos la posibilidad de que se utilice un navegador de Microsoft
+            if (!e) e = window.event;
+            //Tenemos que saber a que elemento nos referimos al parrafo1 o parrafo2
+            if (e.target.id == "parrafo1") alert("Has pulsado el primer párrafo");
+            else if (e.target.id == "parrafo2") alert("Has pulsado el segundo párrafo");
+
+            alert("Has pulsado el " + e.target.id);
+        }
+    </script>
+</body>
+
+</html>

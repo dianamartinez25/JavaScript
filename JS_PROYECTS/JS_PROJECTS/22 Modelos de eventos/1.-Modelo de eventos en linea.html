@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Eventos. Modelo de registro de eventos en línea</title>
+	</head>
+	
+		<!--     
+			EVENTO:
+			Mecanismo que se acciona cuando el usuario realiza un cambio sobre la página web.
+			El encargado de gestionar los eventos es el DOM(Document Object Model).
+	
+			MANEJADOR:
+				Acción que se va a manejar. Por ejempo, en el evento click (hacer click con el ratón) el manejador es onClick.
+			-->
+		
+	<body onload="alert('La página se ha cargado correctamente')">
+		<!-- Vamos a ver tres formas de trabajar con eventos-->
+		<h1>Modelo de registro de eventos en línea </h1>
+		<!-- El nombre del evento es "on" seguido del nombre de la acción-->
+	
+		<!--1.- Manejadores como atributo de una etiqueta XHTML-->
+		<!-- Suponemos que tenemos una etiqueta h3, al hacer clic 
+		quiero cambiar el texto de la etiqueta
+		Cuando coloco el cursor del ratón quiero que el fondo sea de color rojo (onmouseover)
+		cuando salimos de la etiqueta quiero que tenga color blanco(onmouseout)
+		Para referirnos al h3 puedo hacerlo con this -->
+
+		<h3 id="cab1" onclick="this.innerHTML='Javascript en XHTML'" onmouseover="this.style.background='red'" onmouseout="this.style.background='white'">Pulsa aquí para ver lo que se ejecuta</h3>
+		<!-- Otra forma de hacer referencia a la etiqueta h3 es:
+			h3 id="cab1" onclick="document.getElementById("cab1").innerHTML="...">...</h3> -->
+	
+		<!-- 2.- Manejadores como funciones externas -->
+		<h3 onclick="cambiar(this)">Pulsa aquí para ver qué se ejecuta</h3>
+		<script>
+			function cambiar(elem) {
+				elem.innerHTML = "Javascript en XHTML y función externa";
+			}
+		</script>
+	
+		<!-- Hay acciones que desencadenan varios eventos. Ej. cuando pulsamos submit en un formulario
+		desencadena onmousedown, onclick, onmouseup, onsubmit.
+		Para evitar que el navegador ejecute la acción por defecto que puede ser ir a otra página, 
+		necesitamos añadir "return false;" -->
+		<!-- Nos podemos crear una etiqueta a -->
+		<a href="http://www.google.com" onclick="alertar(); return false;">Pulsa aquí para ver qué se ejecuta</a>
+		<script>
+			function alertar() {
+				alert("Vamos a Google");
+			}
+		</script>
+		<br/>
+		<!-- Podemos pedirle al usuario con un confirm si quiere ir a esa página, lo de arriba quedaría así
+		Si el usuario dice true==> devolverá true e irá a la página en caso contrario no-->
+		<a href="http://www.google.com" onclick="return preguntar();">Pulsa aquí para ver qué se ejecuta</a>
+		<script>
+			function preguntar() {
+				return confirm("¿Deseas ir a Google?");
+			}
+		</script>
+	
+		<!-- Carga de página con evento onload 
+		El evento onloag nos permite decirle indicarle a la página que no cargue ningún JavaScript
+		hasta que no haya cargado toda la página-->
+		<!-- Escribimos la etiqueta: <body onload="funcion_ejecutar"> -->
+
+		<!-- Este modelo en que mezclamos código HTML y JavaScript no es nada recomendable,
+		Lo más recomendable es que sólo haya código HTML y archivos externos js-->
+	</body>
+	
+	
+</html>

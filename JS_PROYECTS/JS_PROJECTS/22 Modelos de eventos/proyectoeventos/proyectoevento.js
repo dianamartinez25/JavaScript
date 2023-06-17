@@ -1,0 +1,1 @@
+const Buscador = document.getElementById("Buscador");
